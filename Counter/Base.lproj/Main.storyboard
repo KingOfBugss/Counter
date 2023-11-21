@@ -16,19 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKS-ar-4cA">
-                                <rect key="frame" x="254" y="209" width="29" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Значение счетика:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2om-wx-G2I">
-                                <rect key="frame" x="102" y="202" width="144" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-D1-0F6">
                                 <rect key="frame" x="285" y="561" width="55" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,7 +27,7 @@
                                     <color key="baseForegroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapDidMinesCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WoU-t9-Zgp"/>
+                                    <action selector="decrement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YxH-FK-Lcw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ju0-7h-qcx">
@@ -54,8 +41,7 @@
                                     <color key="baseForegroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapDidMinesCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hfb-Th-3Wl"/>
-                                    <action selector="tapDidResetTo0:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ky3-60-ZRf"/>
+                                    <action selector="didResetToZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZr-ZC-RBn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un3-Ci-HCD">
@@ -67,18 +53,25 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapDidPlusCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PzY-wa-VeD"/>
+                                    <action selector="increment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gy-h9-a2T"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Значение счетика: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKS-ar-4cA">
+                                <rect key="frame" x="123" y="173" width="202" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="countLable" destination="hKS-ar-4cA" id="pki-OB-6w1"/>
-                        <outlet property="minesCountButton" destination="d0M-D1-0F6" id="6aa-yA-4O7"/>
-                        <outlet property="plusCountButton" destination="Un3-Ci-HCD" id="Vkt-Se-Hlr"/>
-                        <outlet property="resetButton" destination="Ju0-7h-qcx" id="ynk-uD-G6c"/>
+                        <outlet property="minusButton" destination="d0M-D1-0F6" id="dUg-Km-FGC"/>
+                        <outlet property="plusButton" destination="Un3-Ci-HCD" id="g0R-yP-jDp"/>
+                        <outlet property="resetButton" destination="Ju0-7h-qcx" id="lkw-T1-2S9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
